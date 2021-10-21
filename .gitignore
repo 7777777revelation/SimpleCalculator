@@ -1,5 +1,4 @@
 
-*.dll
 *.p7s
 *.props
 *.targets
@@ -16,7 +15,6 @@ SimpleCalculator/obj/Debug/SimpleCalculator.csproj.FileListAbsolute.txt
 UnitTests/bin/Debug/SimpleCalculator.exe.config
 UnitTests/obj/Debug/UnitTests.csproj.CopyComplete
 UnitTests/obj/Debug/UnitTests.csproj.FileListAbsolute.txt
-UnitTests/packages.config
 VisitorDesignPattern/bin/Debug/netstandard2.0/VisitorDesignPattern.deps.json
 VisitorDesignPattern/obj/Debug/netstandard2.0/VisitorDesignPattern.csproj.FileListAbsolute.txt
 VisitorDesignPattern/obj/project.assets.json
