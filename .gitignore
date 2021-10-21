@@ -1,6 +1,5 @@
 
 *.p7s
-*.props
 *.targets
 *.xml
 *.nupkg
