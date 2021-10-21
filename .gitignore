@@ -1,8 +1,4 @@
-
-*.p7s
-*.targets
 *.xml
-*.nupkg
 readme.txt.txt
 *.exe
 SimpleCalculator/bin/Debug/SimpleCalculator.exe.config

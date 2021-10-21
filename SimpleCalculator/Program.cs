@@ -40,6 +40,14 @@ namespace SimpleCalculator
     }
 }
 
-
+//TODO
+//DONE 1. finish visitor code  
+//DONE2. add unit tests 
+// exception for errors
+//3. add comments and function headers
+//DONE4. change variable names
+//DONE 5. round to 2 decimals and change doubles to decimal
+//5. do power point
+//6. upload to git
 
 
