@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VisitorDesignPattern;
 
 namespace SimpleCalculator
@@ -15,13 +11,11 @@ namespace SimpleCalculator
         public NodeIdPrinter()
         {
         }
-
         public void Visit(IElement element)
         {
             Node node = (Node)element;
             Console.WriteLine("Node Id: {0}", node.NodeId);
         }
-
     }
 }
 

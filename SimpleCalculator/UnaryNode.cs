@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
@@ -19,9 +15,6 @@ namespace SimpleCalculator
             _rightHandSideOfOp = rightHandSideOfOp;
             _operation = operation;
         }
-
-        Node _rightHandOp;                              // Right hand side of the operation
-        Func<decimal, decimal> _op;               // The callback operator
 
         public override decimal Evaluate()
         {

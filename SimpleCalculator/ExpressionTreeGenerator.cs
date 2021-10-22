@@ -1,9 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleCalculator
 {
@@ -12,7 +7,7 @@ namespace SimpleCalculator
     /// </summary>
     public class ExpressionTreeGenerator
     {
-        AtomicElementGenerator _atomicElementGenerator;
+        private AtomicElementGenerator _atomicElementGenerator;
         private static int _nodeIdCounter = 0;
 
         public ExpressionTreeGenerator(AtomicElementGenerator atomicElementGenerator)
@@ -185,8 +180,6 @@ namespace SimpleCalculator
             throw new Exception($"Unexpected expression atom: {_atomicElementGenerator.NumericAtom}");
         }
 
-
-
         private static Node GenerateExpressionTree(AtomicElementGenerator atomicElementGenerator)
         {
             var expressionTreeGenerator = new ExpressionTreeGenerator(atomicElementGenerator);
@@ -204,7 +197,5 @@ namespace SimpleCalculator
         {
             return GenerateExpressionTree(new AtomicElementGenerator(expression));
         }
-
-
     }
 }

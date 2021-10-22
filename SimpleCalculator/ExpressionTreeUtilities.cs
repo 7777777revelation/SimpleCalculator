@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VisitorDesignPattern;
+﻿using VisitorDesignPattern;
 
 namespace SimpleCalculator
 {
@@ -39,6 +34,5 @@ namespace SimpleCalculator
         public static void PerformOperation(IVisitor visitor, Node rootNode) {
             TraverseExpressionTree(rootNode, visitor);
         }
-
     }
 }

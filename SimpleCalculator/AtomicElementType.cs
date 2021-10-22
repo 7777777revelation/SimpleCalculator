@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SimpleCalculator
+﻿namespace SimpleCalculator
 {
     /// <summary>
     /// The types that an 'atomic' unit of the expression can be
