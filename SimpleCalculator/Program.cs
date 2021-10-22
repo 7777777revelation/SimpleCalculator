@@ -34,7 +34,7 @@ namespace SimpleCalculator
 
                 //Evaluate the expression tree and calculate the value of the arithmetic expression
                 var result = Math.Round(expressionTreeRootNode.Evaluate(), 2, MidpointRounding.AwayFromZero);
-                Console.WriteLine("\r\nExpression '{0}' calculates to: {1}.\r\n", expression, result);
+                Console.WriteLine("\r\nExpression '{0}' calculates to: {1}\r\n", expression, result);
             }
             catch (Exception exc)
             {
