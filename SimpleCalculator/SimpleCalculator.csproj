@@ -60,9 +60,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\VisitorDesignPattern\VisitorDesignPattern.csproj">
-      <Project>{85868b6d-25be-447d-9f84-752ba4e762cd}</Project>
-      <Name>VisitorDesignPattern</Name>
+    <ProjectReference Include="..\DesignPatterns\DesignPatterns.csproj">
+      <Project>{f9945329-556b-40d8-9f94-e700028644b1}</Project>
+      <Name>DesignPatterns</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

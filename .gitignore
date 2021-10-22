@@ -34,3 +34,14 @@ UnitTests/obj/Debug/UnitTests.dll
 VisitorDesignPattern/bin/Debug/netstandard2.0/VisitorDesignPattern.dll
 VisitorDesignPattern/obj/Debug/netstandard2.0/VisitorDesignPattern.dll
 VisitorDesignPattern/obj/VisitorDesignPattern.csproj.nuget.g.targets
+DesignPatterns/obj/Debug/netstandard2.0/DesignPatterns.AssemblyInfo.cs
+DesignPatterns/obj/Debug/netstandard2.0/DesignPatterns.csproj.FileListAbsolute.txt
+DesignPatterns/obj/Debug/netstandard2.0/DesignPatterns.dll
+DesignPatterns/obj/DesignPatterns.csproj.nuget.dgspec.json
+DesignPatterns/obj/DesignPatterns.csproj.nuget.g.props
+DesignPatterns/obj/DesignPatterns.csproj.nuget.g.targets
+DesignPatterns/obj/project.assets.json
+UnitTests/bin/Debug/DesignPatterns.dll
+DesignPatterns/bin/Debug/netstandard2.0/DesignPatterns.deps.json
+DesignPatterns/bin/Debug/netstandard2.0/DesignPatterns.dll
+SimpleCalculator/bin/Debug/DesignPatterns.dll

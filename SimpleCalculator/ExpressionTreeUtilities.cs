@@ -1,4 +1,4 @@
-﻿using VisitorDesignPattern;
+﻿using DesignPatterns;
 
 namespace SimpleCalculator
 {

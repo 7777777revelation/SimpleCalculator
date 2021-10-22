@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace VisitorDesignPattern
+namespace DesignPatterns
 {
     /// <summary>
     /// represents the interface of an element in a structure that would be 'visited' by a 'visitor' to perform
