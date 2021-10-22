@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleCalculator", "SimpleC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{946CBB17-5CDB-40BB-8110-011C1C75E1C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VisitorDesignPattern", "VisitorDesignPattern\VisitorDesignPattern.csproj", "{85868B6D-25BE-447D-9F84-752BA4E762CD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns", "DesignPatterns\DesignPatterns.csproj", "{F9945329-556B-40D8-9F94-E700028644B1}"
 EndProject
 Global
@@ -25,10 +23,6 @@ Global
 		{946CBB17-5CDB-40BB-8110-011C1C75E1C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{946CBB17-5CDB-40BB-8110-011C1C75E1C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{946CBB17-5CDB-40BB-8110-011C1C75E1C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85868B6D-25BE-447D-9F84-752BA4E762CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85868B6D-25BE-447D-9F84-752BA4E762CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85868B6D-25BE-447D-9F84-752BA4E762CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85868B6D-25BE-447D-9F84-752BA4E762CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9945329-556B-40D8-9F94-E700028644B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F9945329-556B-40D8-9F94-E700028644B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F9945329-556B-40D8-9F94-E700028644B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
