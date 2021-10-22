@@ -7,19 +7,19 @@ namespace SimpleCalculator
     /// </summary>
     public class UnaryNode : Node
     {
-        Node _rightHandSideOfOp;                              
+        public Node RightSideOfOp;                              
         Func<decimal, decimal> _operation;              
 
         public UnaryNode(Node rightHandSideOfOp, Func<decimal, decimal> operation)
         {
-            _rightHandSideOfOp = rightHandSideOfOp;
+            RightSideOfOp = rightHandSideOfOp;
             _operation = operation;
         }
 
         public override decimal Evaluate()
         {
             // Evaluate right side of operation
-            var rightHandSideOfOpVal = _rightHandSideOfOp.Evaluate();
+            var rightHandSideOfOpVal = RightSideOfOp.Evaluate();
 
             // Evaluate and return
             var result = _operation(rightHandSideOfOpVal);

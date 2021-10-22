@@ -13,9 +13,15 @@ namespace SimpleCalculator
         {
             if (node is NumberNode)
             {
-                var numberNode = (NumberNode) node;
+                var numberNode = (NumberNode)node;
                 numberNode.Accept(visitor);
                 return;
+            }
+            else if (node is UnaryNode)
+            {
+                var unaryNode = (UnaryNode)node;
+                unaryNode.Accept(visitor);
+                TraverseExpressionTree(unaryNode.RightSideOfOp, visitor);
             }
             else if (node is BinaryNode)
             {

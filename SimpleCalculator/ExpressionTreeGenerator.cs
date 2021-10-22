@@ -133,7 +133,9 @@ namespace SimpleCalculator
                     var rightSideOfOp = ParseUnary();
 
                     // Create unary node
-                    return new UnaryNode(rightSideOfOp, (a) => -a);
+                    var node = new UnaryNode(rightSideOfOp, (a) => -a);
+                    node.NodeId = ++_nodeIdCounter;
+                    return node;
                 }
 
                 // No positive/negative operator so parse a leaf node
