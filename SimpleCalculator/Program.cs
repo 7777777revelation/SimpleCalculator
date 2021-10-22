@@ -17,22 +17,29 @@ namespace SimpleCalculator
             // Create a string variable and get user input from the keyboard and store it in the variable
             string expression = Console.ReadLine();
 
-            var expressionTreeRootNode = ExpressionTreeGenerator.GenerateExpressionTree(expression);
+            try
+            {
+                var expressionTreeRootNode = ExpressionTreeGenerator.GenerateExpressionTree(expression);
 
-            //at this point, expression tree has been built;  We can now use the Visitor design pattern to 
-            //perform operations on every node in the tree:
+                //at this point, expression tree has been built;  We can now use the Visitor design pattern to 
+                //perform operations on every node in the tree:
 
-            Console.WriteLine("\r\nOperation for NodeIdPrinter:\r\n");
-            var nodeIdPrinterVisitor = new NodeIdPrinter();
-            ExpressionTreeUtilities.PerformOperation(nodeIdPrinterVisitor, expressionTreeRootNode);
+                Console.WriteLine("\r\nOperation for NodeIdPrinter:\r\n");
+                var nodeIdPrinterVisitor = new NodeIdPrinter();
+                ExpressionTreeUtilities.PerformOperation(nodeIdPrinterVisitor, expressionTreeRootNode);
 
-            Console.WriteLine("\r\nOperation for LeafNodeValuePrinter:\r\n");
-            var leafNodeValuePrinterVisitor = new LeafNodeValuePrinter();
-            ExpressionTreeUtilities.PerformOperation(leafNodeValuePrinterVisitor, expressionTreeRootNode);
+                Console.WriteLine("\r\nOperation for LeafNodeValuePrinter:\r\n");
+                var leafNodeValuePrinterVisitor = new LeafNodeValuePrinter();
+                ExpressionTreeUtilities.PerformOperation(leafNodeValuePrinterVisitor, expressionTreeRootNode);
 
-            //Evaluate the expression tree and calculate the value of the arithmetic expression
-            var result = Math.Round(expressionTreeRootNode.Evaluate(),2, MidpointRounding.AwayFromZero);
-            Console.WriteLine("\r\nExpression '{0}' calculates to: {1}.\r\n", expression, result);
+                //Evaluate the expression tree and calculate the value of the arithmetic expression
+                var result = Math.Round(expressionTreeRootNode.Evaluate(), 2, MidpointRounding.AwayFromZero);
+                Console.WriteLine("\r\nExpression '{0}' calculates to: {1}.\r\n", expression, result);
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("\r\nUnable to calculate expression '{0}': {1}\r\n", expression, exc.Message);
+            }
 
             Console.WriteLine("Please hit 'Enter' to exit the program.");
             Console.ReadLine();
@@ -40,14 +47,5 @@ namespace SimpleCalculator
     }
 }
 
-//TODO
-//DONE 1. finish visitor code  
-//DONE2. add unit tests 
-// exception for errors
-//3. add comments and function headers
-//DONE4. change variable names
-//DONE 5. round to 2 decimals and change doubles to decimal
-//5. do power point
-//6. upload to git
 
 
