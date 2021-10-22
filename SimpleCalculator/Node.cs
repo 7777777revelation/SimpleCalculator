@@ -13,7 +13,7 @@ namespace SimpleCalculator
         //After expression tree is build, we will use the Visitor design pattern
         //to visit each node and print to the console the node id
         //for each node in the tree
-        public int NodeId { get; set; }
+        public Int64 NodeId { get; set; }
         public bool IsLeaf { get; set; }
         public decimal? NodeValue { get; set; }
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.Singleton;
 
 namespace SimpleCalculator
 {
@@ -13,6 +14,7 @@ namespace SimpleCalculator
 
         public BinaryNode(Node leftSideOfOp, Node rightSideOfOp, Func<decimal, decimal, decimal> operation)
         {
+            base.NodeId = Singleton.GetNextId();
             LeftSideOfOp = leftSideOfOp;
             RightSideOfOp = rightSideOfOp;
             _operation = operation;

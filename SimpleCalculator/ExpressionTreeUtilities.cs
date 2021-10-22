@@ -7,8 +7,8 @@ namespace SimpleCalculator
         /// <summary>
         /// Used to traverse a binary expression tree and apply 'visitor' operations on each node
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="visitor"></param>
+        /// <param name="node">root node of tree to traverse</param>
+        /// <param name="visitor">visitor that will perform operation on each node of tree</param>
         private static void TraverseExpressionTree(Node node, IVisitor visitor)
         {
             if (node is NumberNode)

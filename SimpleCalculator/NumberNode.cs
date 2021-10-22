@@ -1,4 +1,5 @@
 ﻿using System;
+using DesignPatterns.Singleton;
 
 namespace SimpleCalculator
 {
@@ -9,6 +10,7 @@ namespace SimpleCalculator
     {
         public NumberNode(decimal number)
         {
+            base.NodeId = Singleton.GetNextId();
             base.IsLeaf = true;
             base.NodeValue = number;
         }

@@ -8,13 +8,16 @@ namespace SimpleCalculator
     public class ExpressionTreeGenerator
     {
         private AtomicElementGenerator _atomicElementGenerator;
-        private static int _nodeIdCounter = 0;
 
         public ExpressionTreeGenerator(AtomicElementGenerator atomicElementGenerator)
         {
             _atomicElementGenerator = atomicElementGenerator;
         }
 
+        /// <summary>
+        /// Parse the arithmetic expression into a binary expression tree
+        /// </summary>
+        /// <returns>root node of the expression tree</returns>
         public Node ParseExpression()
         {
             var expr = ParseAddSubtract();
@@ -29,7 +32,7 @@ namespace SimpleCalculator
         /// <summary>
         /// This function represents the lowest precedence operators (add and subtract).  It will call the routine for higher precedence operators (multiply and divide) so that the tree is built with the correct precedence
         /// </summary>
-        /// <returns></returns>
+        /// <returns>node in the expression tree</returns>
         Node ParseAddSubtract()
         {
             // Parse the left hand side
@@ -59,9 +62,7 @@ namespace SimpleCalculator
                 var rightSideOfOp = ParseMultiplyDivide();
 
                 // Create a binary node and use it as the left-hand side from now on
-                leftSideOfOp = new BinaryNode(leftSideOfOp, rightSideOfOp, op);
-                leftSideOfOp.NodeId = ++_nodeIdCounter;
-                
+                leftSideOfOp = new BinaryNode(leftSideOfOp, rightSideOfOp, op);                
             }
         }
 
@@ -69,7 +70,7 @@ namespace SimpleCalculator
         /// This routine represents multiply and divide, and calls the routine for unary operators (i.e. '+6' or '-6') since the unary operators have higher precedence than multiply and divide.
         /// This ensures that the tree will be build with the proper precedence.
         /// </summary>
-        /// <returns></returns>
+        /// <returns> node in the expression tree</returns>
         Node ParseMultiplyDivide()
         {
             // Parse the left hand side
@@ -99,9 +100,7 @@ namespace SimpleCalculator
                 var rightSideOfOp = ParseUnary();
 
                 // Create a binary node and use it as the left-hand side from now on
-                leftSideOfOp = new BinaryNode(leftSideOfOp, rightSideOfOp, op);
-                leftSideOfOp.NodeId = ++_nodeIdCounter;
-                
+                leftSideOfOp = new BinaryNode(leftSideOfOp, rightSideOfOp, op);                
             }
         }
 
@@ -109,7 +108,7 @@ namespace SimpleCalculator
         /// <summary>
         /// This routine represents unary operators for plus and minus (i.e. '+6' or '-6')
         /// </summary>
-        /// <returns></returns>
+        /// <returns>node in the expression tree</returns>
         Node ParseUnary()
         {
             while (true)
@@ -134,7 +133,6 @@ namespace SimpleCalculator
 
                     // Create unary node
                     var node = new UnaryNode(rightSideOfOp, (a) => -a);
-                    node.NodeId = ++_nodeIdCounter;
                     return node;
                 }
 
@@ -147,16 +145,13 @@ namespace SimpleCalculator
         /// <summary>
         /// This routine builds the 'leaf' nodes that have no children
         /// </summary>
-        /// <returns></returns>
+        /// <returns>a node in the expression tree</returns>
         Node ParseLeaf()
         {
             // Is it a number?
             if (_atomicElementGenerator.ExpressionAtomType == AtomicElementType.Number)
             {
                 var node = new NumberNode(_atomicElementGenerator.NumericAtom);
-                node.NodeId = ++_nodeIdCounter;
-                //node.IsLeaf = true;
-                //node.NodeValue = _atomicElementGenerator.NumericAtom;
                 _atomicElementGenerator.NextExpressionAtom();
                 return node;
             }
@@ -182,6 +177,11 @@ namespace SimpleCalculator
             throw new Exception($"Unexpected expression atom: {_atomicElementGenerator.NumericAtom}");
         }
 
+        /// <summary>
+        /// creates a binary expression tree
+        /// </summary>
+        /// <param name="atomicElementGenerator">generates "atomic" elements of expression that will be used to build tree</param>
+        /// <returns>root node of expresion tree</returns>
         private static Node GenerateExpressionTree(AtomicElementGenerator atomicElementGenerator)
         {
             var expressionTreeGenerator = new ExpressionTreeGenerator(atomicElementGenerator);
@@ -194,7 +194,7 @@ namespace SimpleCalculator
         /// evaluate the result of the arithmetic expression.
         /// </summary>
         /// <param name="expression"></param>
-        /// <returns></returns>
+        /// <returns>root node of expression tree</returns>
         public static Node GenerateExpressionTree(string expression)
         {
             return GenerateExpressionTree(new AtomicElementGenerator(expression));
